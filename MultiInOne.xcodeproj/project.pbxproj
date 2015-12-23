@@ -15,6 +15,8 @@
 		237F5FDC1C2ACB1B007EF27B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237F5FDA1C2ACB1B007EF27B /* LaunchScreen.storyboard */; };
 		237F5FE71C2ACB1B007EF27B /* MultiInOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F5FE61C2ACB1B007EF27B /* MultiInOneTests.m */; };
 		237F5FF21C2ACB1B007EF27B /* MultiInOneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F5FF11C2ACB1B007EF27B /* MultiInOneUITests.m */; };
+		237F60041C2ACB2B007EF27B /* BackgroundExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F60001C2ACB2B007EF27B /* BackgroundExecutor.m */; };
+		237F60051C2ACB2B007EF27B /* MultiInOneThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F60031C2ACB2B007EF27B /* MultiInOneThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		237F5FED1C2ACB1B007EF27B /* MultiInOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiInOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		237F5FF11C2ACB1B007EF27B /* MultiInOneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiInOneUITests.m; sourceTree = "<group>"; };
 		237F5FF31C2ACB1B007EF27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		237F60001C2ACB2B007EF27B /* BackgroundExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundExecutor.m; sourceTree = "<group>"; };
+		237F60011C2ACB2B007EF27B /* MultiInOneExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiInOneExecutor.h; sourceTree = "<group>"; };
+		237F60021C2ACB2B007EF27B /* MultiInOneThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiInOneThread.h; sourceTree = "<group>"; };
+		237F60031C2ACB2B007EF27B /* MultiInOneThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiInOneThread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		237F5FCB1C2ACB1B007EF27B /* MultiInOne */ = {
 			isa = PBXGroup;
 			children = (
+				237F5FFF1C2ACB2B007EF27B /* MultiInOne */,
 				237F5FCF1C2ACB1B007EF27B /* AppDelegate.h */,
 				237F5FD01C2ACB1B007EF27B /* AppDelegate.m */,
 				237F5FD21C2ACB1B007EF27B /* ViewController.h */,
@@ -138,6 +145,18 @@
 				237F5FF31C2ACB1B007EF27B /* Info.plist */,
 			);
 			path = MultiInOneUITests;
+			sourceTree = "<group>";
+		};
+		237F5FFF1C2ACB2B007EF27B /* MultiInOne */ = {
+			isa = PBXGroup;
+			children = (
+				237F60001C2ACB2B007EF27B /* BackgroundExecutor.m */,
+				237F60011C2ACB2B007EF27B /* MultiInOneExecutor.h */,
+				237F60021C2ACB2B007EF27B /* MultiInOneThread.h */,
+				237F60031C2ACB2B007EF27B /* MultiInOneThread.m */,
+			);
+			name = MultiInOne;
+			path = ../../TestSimple/MultiInOne;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				237F5FD41C2ACB1B007EF27B /* ViewController.m in Sources */,
+				237F60051C2ACB2B007EF27B /* MultiInOneThread.m in Sources */,
 				237F5FD11C2ACB1B007EF27B /* AppDelegate.m in Sources */,
+				237F60041C2ACB2B007EF27B /* BackgroundExecutor.m in Sources */,
 				237F5FCE1C2ACB1B007EF27B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
