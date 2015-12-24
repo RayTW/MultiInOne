@@ -27,7 +27,7 @@
 -(void)testAsyncSubmitTadk{
     NSLog(@"testAsyncSubmitTadk,begin");
     for(int i = 0; i < 10; i++){
-        [[MultiInOneExecutor sharedinstance] submitAsync:^(){
+        [[MultiInOneExecutor sharedinstance] submitAsync:^{
             sleep(1);
             NSLog(@"%d", i);
         }];
@@ -38,7 +38,7 @@
 -(void)testSyncSubmitTadk{
     NSLog(@"testSyncSubmitTadk,begin");
     for(int i = 0; i < 10; i++){
-        [[MultiInOneExecutor sharedinstance] submitSync:^(){
+        [[MultiInOneExecutor sharedinstance] submitSync:^{
             sleep(1);
             NSLog(@"%d", i);
         }];
@@ -54,7 +54,7 @@
 }
 
 -(void)testHttpRequestMultiInOne{
-    [[MultiInOneExecutor sharedinstance] submitSync:^(){
+    [[MultiInOneExecutor sharedinstance] submitSync:^{
         //work success
         [self requestApple];
     }];
