@@ -21,7 +21,8 @@
     //    [self testSyncSubmitTadk];
     //    [self testHttpRequestGCD];//not work
     //    [self testHttpRequestMultiInOne];//work success
-    
+    [self testTimerGCD];//not work
+    [self testTimer];//work success, NSTimer on background thread
 }
 
 -(void)testAsyncSubmitTadk{
@@ -58,6 +59,22 @@
         //work success
         [self requestApple];
     }];
+}
+
+-(void)testTimerGCD{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerInterval) userInfo:nil repeats:YES];
+    });
+}
+
+-(void)testTimer{
+    [[MultiInOneExecutor sharedinstance] submitAsync:^{
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerInterval) userInfo:nil repeats:YES];
+    }];
+}
+
+-(void)timerInterval{
+    NSLog(@"timerInterval,currentThread=>%@",[NSThread currentThread]);
 }
 
 -(void)requestApple{
