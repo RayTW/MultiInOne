@@ -4,12 +4,15 @@
 <br>
 <br>
 使用方式如下:
-* 非同步執行<br>
-[[MultiInOneExecutor sharedinstance] submitAsync:^{<br>
-    //TODO 此處可執行網路操作，且不會佔用main thread<br>
-  }];<br>
-
-* 同步執行<br>
- [[MultiInOneExecutor sharedinstance] submitSync:^{<br>
- //TODO 此處可執行網路操作，且不會佔用main thread<br>
-        }];<br>
+* 非同步執行
+<pre>
+[[MultiInOneExecutor sharedinstance] submitAsync:^{
+    //TODO 此處可執行網路操作，且不會佔用main thread
+ }];
+</pre>
+* 同步執行
+<pre>
+[[MultiInOneExecutor sharedinstance] submitSync:^{
+   //TODO 此處可執行網路操作，且不會佔用main thread
+}];
+</pre>
