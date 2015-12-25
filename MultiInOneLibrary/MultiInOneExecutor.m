@@ -15,7 +15,7 @@ static MultiInOneExecutor *instance;
     MultiInOneThread *mDefaultGlobalThread;
 }
 
-+(MultiInOneExecutor *) sharedinstance{
++(instancetype) sharedinstance{
     if(instance == nil){
         @synchronized([MultiInOneExecutor class]) {
             if(instance == nil){
