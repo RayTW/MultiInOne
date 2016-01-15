@@ -38,7 +38,7 @@ static MultiInOneExecutor *instance;
 
 -(void)submitAsync:(void (^)(void))task{
     if(task){
-        [self performSelector:@selector(doSubmitTask:) onThread:mDefaultGlobalThread withObject:task waitUntilDone:NO];
+        [self performSelector:@selector(doSubmitTask:) onThread:mDefaultGlobalThread withObject:[task copy] waitUntilDone:NO];
     }
 }
 
